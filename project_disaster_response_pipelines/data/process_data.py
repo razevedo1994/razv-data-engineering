@@ -1,6 +1,5 @@
 import sys
 import pandas as pd
-import numpy as np
 import re
 from sqlalchemy import create_engine
 
