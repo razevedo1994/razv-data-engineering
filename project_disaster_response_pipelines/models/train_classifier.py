@@ -30,7 +30,7 @@ def load_data(database_filepath):
     
     """
     engine = create_engine('sqlite:///'+ database_filepath)
-    pd = pd.read_sql("SELECT * FROM message_disaster", engine)
+    df = pd.read_sql("SELECT * FROM message_disaster", engine)
     
     X = df['message']
     Y = df.iloc[:,4:]
@@ -126,7 +126,7 @@ def save_model(model, model_filepath):
     
     """
     with open(model_filepath, 'wb') as file:
-    pickle.dump(cv, file)
+        pickle.dump(model, file)
 
 
 def main():
