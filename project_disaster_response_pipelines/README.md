@@ -1,5 +1,15 @@
 # Disaster Response Classification API
 
+### Table of Contents
+
+[Project Motivation](#Motivation)
+
+[Project Descriptions](#Description)
+
+[Files Descriptions](#Descriptions)
+
+[Instructions](#Instructions)
+
 
 ### Project Motivation<a name="Motivation"></a>
 
@@ -28,3 +38,42 @@ The project has three componants which are:
 #### Flask Web App: the web app enables the user to enter a disaster message, and then view the categories of the message.
 
 - [x] The web app also contains some visualizations that describe the data.
+
+### Files Descriptions<a name="Descriptions"></a>
+
+#### The files structure is arranged as below:
+
+- README.md: read me file
+- Project Components.txt: Project requirements to complete
+- workspace
+	- \app
+		- run.py: flask file to run the app
+	- \templates
+		- master.html: main page of the web application 
+		- go.html: result web page
+	- \data
+		- disaster_categories.csv: categories dataset
+		- disaster_messages.csv: messages dataset
+		- DisasterResponse.db: disaster response database
+		- process_data.py: ETL process
+	- \models
+		- train_classifier.py: classification code
+		- MLclassifier.pkl: model pickle file
+		
+	- \Pipeline Preparation
+		- ETL Pipeline Preparation.py
+		- ML Pipeline Preparation.py
+		
+
+### Instructions<a name="Instruction"></a>
+
+To execute the app follow the instructions:
+
+   Run the following commands in the project's root directory to set up your database and model.
+        To run ETL pipeline that cleans data and stores in database python 'data/process_data.py data/disaster_messages.csv' 'data/disaster_categories.csv' 'data/DisasterResponse.db'
+        To run ML pipeline that trains classifier and saves python 'models/train_classifier.py' 'data/DisasterResponse.db' 'models/classifier.pkl'
+
+   Run the following command in the app's directory to run your web app. python run.py
+
+   Go to http://0.0.0.0:3001/
+   

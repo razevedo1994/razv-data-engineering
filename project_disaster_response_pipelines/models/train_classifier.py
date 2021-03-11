@@ -1,6 +1,8 @@
 # - Import libraries.
 
 import sys
+import warnings
+warnings.filterwarnings('ignore')  # "error", "ignore", "always", "default", "module" or "once"
 import nltk
 nltk.download(['punkt', 'wordnet'])
 import re
@@ -35,7 +37,7 @@ def load_data(database_filepath):
     X = df['message']
     Y = df.iloc[:,4:]
     
-    category_names = Y.columns.values
+    category_names = Y.columns.tolist()
     
     return X, Y, category_names
 
@@ -102,18 +104,18 @@ def evaluate_model(model, X_test, Y_test, category_names):
     Outputs: Prints the Classification report & Accuracy Score
     
     """
-    Y_pred = model.predict(X_test)
-    report= classification_report(Y_pred,Y_test, target_names=category_names)
+    y_pred = model.predict(X_test)
+    print(classification_report(Y_test, y_pred, target_names=category_names))
 
 
-    temp=[]
-    for item in report.split("\n"):
-        temp.append(item.strip().split('     '))
-    clean_list=[ele for ele in temp if ele != ['']]
-    report_df=pd.DataFrame(clean_list[1:],columns=['group','precision','recall', 'f1-score','support'])
+    #temp=[]
+    #for item in report.split("\n"):
+        #temp.append(item.strip().split('     '))
+    #clean_list=[ele for ele in temp if ele != ['']]
+    #report_df=pd.DataFrame(clean_list[1:],columns=['group','precision','recall', 'f1-score','support'])
 
 
-    return report
+    #return report
 
 
 def save_model(model, model_filepath):
@@ -125,8 +127,7 @@ def save_model(model, model_filepath):
     Output: save the model as pickle file in the give filepath 
     
     """
-    with open(model_filepath, 'wb') as file:
-        pickle.dump(model, file)
+    pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():

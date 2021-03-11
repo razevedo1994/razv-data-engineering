@@ -53,6 +53,10 @@ def clean_data(df):
         categories[column] = categories[column].str.split('-').str.get(-1)
         categories[column] = categories[column].astype(int)
         
+        for n, i in enumerate(categories[column]):
+            if i > 1:
+                categories[column][n] = 1
+        
     # - Drop the original categories column from `df`.
     # - Concatenate the original dataframe with the new `categories` dataframe.
     # - Drop duplicates.
