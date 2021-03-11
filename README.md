@@ -12,7 +12,7 @@
 
 
 ## Projects:
-* **Disaster Response Classification API: The goal of the project is to classify the disaster messages into categories.:** https://bit.ly/2PJFirE
+* **Disaster Response Classification API: The goal of the project is to classify the disaster messages into categories:** https://bit.ly/2PJFirE
 
 
 ---
