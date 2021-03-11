@@ -1,5 +1,9 @@
 # Disaster Response Classification API
 
+<p align="center">
+  <img src="banner.png" >
+</p>
+
 ### Table of Contents
 
 [Project Motivation](#Motivation)
