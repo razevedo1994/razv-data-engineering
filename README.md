@@ -3,7 +3,7 @@
 
 
 **Contact:**
-* [E-mail] razevedo.contato@gmail.com
+* [E-mail](razevedo.contato@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/azevedo94/)
 
 
