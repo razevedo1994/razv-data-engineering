@@ -7,7 +7,7 @@ from nltk.tokenize import word_tokenize
 
 from flask import Flask
 from flask import render_template, request, jsonify
-from plotly.graph_objs import Bar
+from plotly.graph_objs import Bar, Scatter
 from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
@@ -43,6 +43,14 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    # Number of Messages per Category
+    Message_counts = df.drop(['id','message','original','genre', 'related'], axis=1).sum().sort_values()
+    Message_names = list(Message_counts.index)
+    
+    # Top ten categories count
+    top_category_count = df.iloc[:,4:].sum().sort_values(ascending=False)[1:11]
+    top_category_names = list(top_category_count.index)
+    
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
@@ -63,7 +71,48 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        
+        {
+            'data': [
+                Bar(
+                    x=Message_counts,
+                    y=Message_names,
+                    orientation = 'h',
+                    
+                
+                )
+            ],
+           
+            'layout': {
+                'title': 'Number of Messages per Category',
+                
+                'xaxis': {
+                    'title': "Number of Messages"
+                    
+                },
+            }
+        },
+        
+        {
+            'data': [
+                Bar(
+                    x=top_category_names,
+                    y=top_category_count
+                )
+            ],
+
+            'layout': {
+                'title': 'Top Ten Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Categories"
+                }
+            }
         }
+        
     ]
     
     # encode plotly graphs in JSON
