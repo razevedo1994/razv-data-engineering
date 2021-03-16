@@ -7,7 +7,7 @@
 
 [Project Descriptions](#Description)
 
-[Files Descriptions](#Files Descriptions)
+[Files Descriptions](#FilesDescriptions)
 
 ### Project Motivation<a name="Motivation"></a>
 
@@ -19,7 +19,7 @@ They'd like a data engineer to create a Postgres database with tables designed t
 
 In this project, we will apply data modeling with Postgres and build an ETL pipeline using Python. To complete the project, we will define fact and dimension tables for a star schema for a particular analytical focus, and write an ETL pipeline that transfers data from files in two local directories to these tables in Postgres using Python and SQL.
 
-### Files Descriptions<a name="Files Descriptions"></a>
+### Files Descriptions<a name="FilesDescriptions"></a>
 
 - test.ipynb displays the first few rows of each table to let you check your database.
 - create_tables.py drops and creates your tables. You run this file to reset your tables before each time you run your ETL scripts.
