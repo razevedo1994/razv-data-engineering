@@ -1,4 +1,3 @@
-
 ### Project: Data Modeling with Postgres
 
 ### Table of Contents
@@ -8,6 +7,10 @@
 [Project Descriptions](#Description)
 
 [Files Descriptions](#FilesDescriptions)
+
+[Dimension Tables](#DimensionTables)
+
+[How to run](#HowToRun)
 
 ### Project Motivation<a name="Motivation"></a>
 
@@ -27,3 +30,22 @@ In this project, we will apply data modeling with Postgres and build an ETL pipe
 - etl.py reads and processes files from song_data and log_data and loads them into your tables. You can fill this out based on your work in the ETL notebook.
 - sql_queries.py contains all your sql queries, and is imported into the last three files above.
 
+
+#### Dimension Tables<a name="DimensionTables"></a>
+
+The following diagram shows all four dimension tables. These four tables will exist in postgres,
+the code in this repository will upload the data to postgres.
+
+<p align="center">
+  <img src="diagram.png" >
+</p>
+
+In the center of the dimension table will be the fact table. together, these form
+a star schema.
+
+
+
+### How to run the python scripts<a name="HowToRun"></a>
+
+Make sure that the machine that runs the scripts have Postgres installed and available.
+Remember to run create_tables.py before running etl.py to restart your tables. Run test.ipynb to confirm that your records have been successfully inserted into each table.
