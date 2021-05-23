@@ -17,10 +17,36 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 
 # CREATE TABLES
 
-staging_events_table_create = """
+staging_events_table_create = """CREATE TABLE IF NOT EXISTS staging_events (artist varchar,
+                                                                            auth varchar,
+                                                                            firstName varchar,
+                                                                            gender varchar,
+                                                                            itemInSession int,
+                                                                            lastName varchar,
+                                                                            length real,
+                                                                            level varchar,
+                                                                            location varchar,
+                                                                            method varchar,
+                                                                            page varchar,
+                                                                            registration real,
+                                                                            sessionId int,
+                                                                            song varchar,
+                                                                            status int,
+                                                                            ts timestamp,
+                                                                            userAgent varchar,
+                                                                            userId int);
 """
 
-staging_songs_table_create = """
+staging_songs_table_create = """CREATE TABLE IF NOT EXISTS staging_songs (num_songs int,
+                                                                        artist_id varchar,
+                                                                        artist_latitude float,
+                                                                        artist_longitude float,
+                                                                        artist_location varchar,
+                                                                        artist_name varhar,
+                                                                        song_id varchar,
+                                                                        title varchar,
+                                                                        duration real,
+                                                                        year int);
 """
 
 songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id serial PRIMARY KEY,
