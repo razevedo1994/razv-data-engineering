@@ -23,19 +23,45 @@ staging_events_table_create = """
 staging_songs_table_create = """
 """
 
-songplay_table_create = """
+songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id serial PRIMARY KEY,
+                                                                start_time bigint NOT NULL,
+                                                                user_id int NOT NULL REFERENCES users(user_id),
+                                                                level varchar,
+                                                                song_id varchar,
+                                                                artist_id varchar REFERENCES artists(artist_id),
+                                                                session_id int,
+                                                                location text,
+                                                                user_agent text);
 """
 
-user_table_create = """
+user_table_create = """CREATE TABLE IF NOT EXISTS users (user_id int PRIMARY KEY,
+                                                        first_name varchar NOT NULL,
+                                                        last_name varchar NOT NULL,
+                                                        gender varchar NOT NULL,
+                                                        level varchar);
 """
 
-song_table_create = """
+song_table_create = """CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY,
+                                                        title varchar,
+                                                        artist_id varchar REFERENCES artists(artist_id),
+                                                        year int,
+                                                        duration decimal);
 """
 
-artist_table_create = """
+artist_table_create = """CREATE TABLE IF NOT EXISTS artists (artist_id varchar PRIMARY KEY,
+                                                            name varchar,
+                                                            location varchar,
+                                                            latitude varchar,
+                                                            longitude varchar);
 """
 
-time_table_create = """
+time_table_create = """CREATE TABLE IF NOT EXISTS time (start_time timestamp PRIMARY KEY,
+                                                        hour int,
+                                                        day int,
+                                                        week int,
+                                                        month int,
+                                                        year int,
+                                                        weekday int);
 """
 
 # STAGING TABLES
