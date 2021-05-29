@@ -111,7 +111,26 @@ staging_songs_copy = (
 
 # FINAL TABLES
 
-songplay_table_insert = """
+songplay_table_insert = """INSERT INTO songplays (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
+                            SELECT se.ts as start_time,
+                                    se.userId as user_id,
+                                    se.level,
+                                    ss.song_id,
+                                    ss.artist_id,
+                                    se.sessionId as session_id,
+                                    se.location,
+                                    se.userAgent as user_agent
+                            FROM staging_events se, staging_songs ss
+                            WHERE se.page = 'NextSong'
+                            AND se.song = ss.title
+                            AND se.userId NOT IN (SELECT DISTINCT sp.user.id,
+                                                    FROM songplays as sp
+                                                    WHERE sp.user_id IS NOT NULL
+                                                    AND sp.user_id = se.userId
+                                                    AND sp.session_id = se.sessionId
+                                                    AND sp.user_id IN (SELECT user_id 
+                                                                        FROM users));
+
 """
 
 user_table_insert = """
