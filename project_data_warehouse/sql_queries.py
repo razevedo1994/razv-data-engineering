@@ -133,7 +133,7 @@ songplay_table_insert = """INSERT INTO songplays (start_time, user_id, level, so
 
 """
 
-user_table_insert = """INSERT INTO users(user_id, first_name, last_name, gender, level)
+user_table_insert = """INSERT INTO users (user_id, first_name, last_name, gender, level)
                         SELECT DISTINCT se.userId as user_id,
                                         se.firstName as first_name,
                                         se.lastName as last_name,
@@ -164,7 +164,7 @@ song_table_insert = """INSERT INTO songs (song_id, title, artist_id, year, durat
                                 WHERE song_id IS NOT NULL) ss;
 """
 
-artist_table_insert = """INSERT INTO artist (artist_id, name, location, latitude, longitude)
+artist_table_insert = """INSERT INTO artists (artist_id, name, location, latitude, longitude)
                             SELECT DISTINCT ss.artist_id,
                                             ss.artist_name as name,
                                             ss.artist_location as location,
@@ -179,7 +179,16 @@ artist_table_insert = """INSERT INTO artist (artist_id, name, location, latitude
                                     WHERE artist_id IS NOT NULL) ss;
 """
 
-time_table_insert = """
+time_table_insert = """INSERT INTO time (start_time, hour, day, week, month, year, weekday)
+                        SELECT se.ts as start_time,
+                                EXTRACT (hour FROM se.ts) as hour,
+                                EXTRACT (day FROM se.ts) as day,
+                                EXTRACT (week FROM se.ts) as week,
+                                EXTRACT (month FROM se.ts) as month,
+                                EXTRACT (year FROM se.ts) as year,
+                                EXTRACT (weekday FROM se.ts) as weekday
+                        FROM (SELECT DISTINCT ts
+                                FROM staging_events) se;
 """
 
 # QUERY LISTS
