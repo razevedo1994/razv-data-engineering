@@ -73,5 +73,5 @@ def main():
             IamRoles=[roleArn]
         )
     except Exception as e:
-    print(e)
+        print(e)
     
