@@ -149,7 +149,19 @@ user_table_insert = """INSERT INTO users(user_id, first_name, last_name, gender,
                                 AND page = 'NextSong') se;
 """
 
-song_table_insert = """
+song_table_insert = """INSERT INTO songs (song_id, title, artist_id, year, duration)
+                        SELECT DISTINCT ss.song_id,
+                                        ss.title,
+                                        ss.artist_id,
+                                        ss.year,
+                                        ss.duration
+                        FROM (SELECT song_id,
+                                    title,
+                                    artist_id,
+                                    year,
+                                    duration
+                                FROM staging_songs
+                                WHERE song_id IS NOT NULL) ss;
 """
 
 artist_table_insert = """
