@@ -133,7 +133,20 @@ songplay_table_insert = """INSERT INTO songplays (start_time, user_id, level, so
 
 """
 
-user_table_insert = """
+user_table_insert = """INSERT INTO users(user_id, first_name, last_name, gender, level)
+                        SELECT DISTINCT se.userId as user_id,
+                                        se.firstName as first_name,
+                                        se.lastName as last_name,
+                                        se.gender,
+                                        se.level
+                        FROM (SELECT userId,
+                                    firstName,
+                                    lastName,
+                                    gender,
+                                    level
+                                FROM staging_events
+                                WHERE userId IS NOT NULL
+                                AND page = 'NextSong') se;
 """
 
 song_table_insert = """
