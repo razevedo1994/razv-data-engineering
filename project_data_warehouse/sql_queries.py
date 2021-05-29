@@ -164,7 +164,19 @@ song_table_insert = """INSERT INTO songs (song_id, title, artist_id, year, durat
                                 WHERE song_id IS NOT NULL) ss;
 """
 
-artist_table_insert = """
+artist_table_insert = """INSERT INTO artist (artist_id, name, location, latitude, longitude)
+                            SELECT DISTINCT ss.artist_id,
+                                            ss.artist_name as name,
+                                            ss.artist_location as location,
+                                            ss.artist_latitude as latitude,
+                                            ss.artist_longitude as longitude
+                            FROM (SELECT artist_id,
+                                        artist_name,
+                                        artist_location,
+                                        artist_latitude,
+                                        artist_longitude
+                                    FROM staging_songs
+                                    WHERE artist_id IS NOT NULL) ss;
 """
 
 time_table_insert = """
