@@ -61,6 +61,9 @@ def main():
     except Exception as e:
         print(e)
         
+    # Get the IAM role ARN 
+    roleArn = iam.get_role(RoleName=DWH_IAM_ROLE_NAME)['Role']['Arn']
+        
     # Create cluster    
     try:
         response = redshift.create_cluster(
@@ -71,7 +74,7 @@ def main():
             ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,
             MasterUsername=DWH_DB_USER,
             MasterUserPassword=DWH_DB_PASSWORD,
-            IamRoles=ARN
+            IamRoles=[roleArn]
         )
     except Exception as e:
         print(e)
