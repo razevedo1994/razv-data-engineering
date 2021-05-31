@@ -3,7 +3,8 @@ import configparser
 
 # CONFIG
 config = configparser.ConfigParser()
-config.read("dwh.cfg")
+config.read_file(open("dwh.cfg"))
+ARN = config.get('IAM_ROLE', 'ARN')
 
 # DROP TABLES
 
@@ -103,7 +104,7 @@ staging_events_copy = (
 
 staging_songs_copy = (
     """COPY staging_songs from 's3://udacity-dend/song_data'
-	    credentials 'aws_iam_role={role_arn}'
+	    credentials 'aws_iam_role=ARN'
 	    compupdate off statupdate off
 	    region 'us-west-2' format as JSON 'auto';
 """
