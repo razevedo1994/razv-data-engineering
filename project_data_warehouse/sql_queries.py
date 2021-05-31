@@ -50,6 +50,13 @@ staging_songs_table_create = """CREATE TABLE IF NOT EXISTS staging_songs (num_so
                                                                         year int);
 """
 
+user_table_create = """CREATE TABLE IF NOT EXISTS users (user_id int PRIMARY KEY,
+                                                        first_name varchar NOT NULL,
+                                                        last_name varchar NOT NULL,
+                                                        gender varchar NOT NULL,
+                                                        level varchar);
+"""
+
 songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id int PRIMARY KEY,
                                                                 start_time bigint NOT NULL,
                                                                 user_id int NOT NULL REFERENCES users(user_id),
@@ -59,13 +66,6 @@ songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id int
                                                                 session_id int,
                                                                 location text,
                                                                 user_agent text);
-"""
-
-user_table_create = """CREATE TABLE IF NOT EXISTS users (user_id int PRIMARY KEY,
-                                                        first_name varchar NOT NULL,
-                                                        last_name varchar NOT NULL,
-                                                        gender varchar NOT NULL,
-                                                        level varchar);
 """
 
 song_table_create = """CREATE TABLE IF NOT EXISTS songs (song_id varchar PRIMARY KEY,
