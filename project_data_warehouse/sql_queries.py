@@ -95,7 +95,7 @@ time_table_create = """CREATE TABLE IF NOT EXISTS time (start_time timestamp PRI
 
 staging_events_copy = (
     """COPY staging_events from 's3://udacity-dend/log_data'
-        credentials 'aws_iam_role={role_arn}'
+        credentials 'aws_iam_role=ARN'
         compupdate off statupdate off
         region 'us-west-2' format as JSON 's3://udacity-dend/log_json_path.json'
         timeformat as 'epochmillisecs';
