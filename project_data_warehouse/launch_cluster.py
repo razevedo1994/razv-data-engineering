@@ -71,7 +71,7 @@ def main():
             ClusterIdentifier=DWH_CLUSTER_IDENTIFIER,
             MasterUsername=DWH_DB_USER,
             MasterUserPassword=DWH_DB_PASSWORD,
-            IamRoles=[roleArn]
+            IamRoles=ARN
         )
     except Exception as e:
         print(e)
