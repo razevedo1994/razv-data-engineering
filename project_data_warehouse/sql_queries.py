@@ -50,7 +50,7 @@ staging_songs_table_create = """CREATE TABLE IF NOT EXISTS staging_songs (num_so
                                                                         year int);
 """
 
-songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id serial PRIMARY KEY,
+songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id int PRIMARY KEY,
                                                                 start_time bigint NOT NULL,
                                                                 user_id int NOT NULL REFERENCES users(user_id),
                                                                 level varchar,
