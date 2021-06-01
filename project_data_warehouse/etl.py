@@ -17,9 +17,11 @@ def insert_tables(cur, conn):
 
 def main():
     config = configparser.ConfigParser()
-    config.read('dwh.cfg')
+    config.read_file(open("dwh.cfg"))
 
-    conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(*config['CLUSTER'].values()))
+    conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(config.get('DWH', 'DWH_HOST'), config.get('DWH', 'DWH_DB'),
+                                                              config.get('DWH', 'DWH_DB_USER'), config.get('DWH', 'DWH_DB_PASSWORD'),
+                                                              config.get('DWH', 'DWH_PORT'))
     cur = conn.cursor()
     
     load_staging_tables(cur, conn)
