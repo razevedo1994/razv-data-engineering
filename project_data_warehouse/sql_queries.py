@@ -100,9 +100,11 @@ staging_events_copy = (
         region 'us-west-2' format as JSON {} \
         timeformat as 'epochmillisecs';
 """
-).format(config.get('S3', 'LOG_DATA'),
-        config.get('IAM_ROLE', 'ARN'),
-        config.get('S3', 'LOG_JSONPATH'))
+).format(
+    config.get("S3", "LOG_DATA"),
+    config.get("IAM_ROLE", "ARN"),
+    config.get("S3", "LOG_JSONPATH"),
+)
 
 staging_songs_copy = (
     """COPY staging_songs from {} \
@@ -110,8 +112,7 @@ staging_songs_copy = (
 	    compupdate off statupdate off \
 	    region 'us-west-2' format as JSON 'auto';
 """
-).format(config.get('S3', 'SONG_DATA'),
-        config.get('IAM_ROLE', 'ARN'))
+).format(config.get("S3", "SONG_DATA"), config.get("IAM_ROLE", "ARN"))
 
 # FINAL TABLES
 
