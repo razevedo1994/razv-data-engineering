@@ -94,10 +94,10 @@ time_table_create = """CREATE TABLE IF NOT EXISTS time (start_time timestamp PRI
 # STAGING TABLES
 
 staging_events_copy = (
-    """COPY staging_events from {}
-        credentials {}
-        compupdate off statupdate off
-        region 'us-west-2' format as JSON {}
+    """COPY staging_events from {} \
+        credentials 'aws_iam_role={}' \
+        compupdate off statupdate off \
+        region 'us-west-2' format as JSON {} \
         timeformat as 'epochmillisecs';
 """
 ).format(config.get('S3', 'LOG_DATA'),
@@ -105,9 +105,9 @@ staging_events_copy = (
         config.get('S3', 'LOG_JSONPATH'))
 
 staging_songs_copy = (
-    """COPY staging_songs from {}
-	    credentials {}
-	    compupdate off statupdate off
+    """COPY staging_songs from {} \
+	    credentials 'aws_iam_role={}' \
+	    compupdate off statupdate off \
 	    region 'us-west-2' format as JSON 'auto';
 """
 ).format(config.get('S3', 'SONG_DATA'),
@@ -127,7 +127,7 @@ songplay_table_insert = """INSERT INTO songplays (start_time, user_id, level, so
                             FROM staging_events se, staging_songs ss
                             WHERE se.page = 'NextSong'
                             AND se.song = ss.title
-                            AND se.userId NOT IN (SELECT DISTINCT sp.user.id,
+                            AND se.userId NOT IN (SELECT DISTINCT sp.user.id
                                                     FROM songplays as sp
                                                     WHERE sp.user_id IS NOT NULL
                                                     AND sp.user_id = se.userId
