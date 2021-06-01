@@ -57,8 +57,8 @@ user_table_create = """CREATE TABLE IF NOT EXISTS users (user_id int PRIMARY KEY
                                                         level varchar);
 """
 
-songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id int PRIMARY KEY,
-                                                                start_time bigint NOT NULL,
+songplay_table_create = """CREATE TABLE IF NOT EXISTS songplays (songplay_id int identity(0,1) PRIMARY KEY,
+                                                                start_time timestamp NOT NULL,
                                                                 user_id int NOT NULL REFERENCES users(user_id),
                                                                 level varchar,
                                                                 song_id varchar,
@@ -127,7 +127,7 @@ songplay_table_insert = """INSERT INTO songplays (start_time, user_id, level, so
                             FROM staging_events se, staging_songs ss
                             WHERE se.page = 'NextSong'
                             AND se.song = ss.title
-                            AND se.userId NOT IN (SELECT DISTINCT sp.user.id
+                            AND se.userId NOT IN (SELECT DISTINCT sp.user_id
                                                     FROM songplays as sp
                                                     WHERE sp.user_id IS NOT NULL
                                                     AND sp.user_id = se.userId
