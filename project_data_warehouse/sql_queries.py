@@ -4,7 +4,7 @@ import configparser
 # CONFIG
 config = configparser.ConfigParser()
 config.read_file(open("dwh.cfg"))
-ARN = config.get('IAM_ROLE', 'ARN')
+
 
 # DROP TABLES
 
@@ -94,21 +94,24 @@ time_table_create = """CREATE TABLE IF NOT EXISTS time (start_time timestamp PRI
 # STAGING TABLES
 
 staging_events_copy = (
-    """COPY staging_events from 's3://udacity-dend/log_data'
-        credentials 'aws_iam_role=ARN'
+    """COPY staging_events from {}
+        credentials {}
         compupdate off statupdate off
-        region 'us-west-2' format as JSON 's3://udacity-dend/log_json_path.json'
+        region 'us-west-2' format as JSON {}
         timeformat as 'epochmillisecs';
 """
-).format()
+).format(config.get('S3', 'LOG_DATA'),
+        config.get('IAM_ROLE', 'ARN'),
+        config.get('S3', 'LOG_JSONPATH'))
 
 staging_songs_copy = (
-    """COPY staging_songs from 's3://udacity-dend/song_data'
-	    credentials 'aws_iam_role=ARN'
+    """COPY staging_songs from {}
+	    credentials {}
 	    compupdate off statupdate off
 	    region 'us-west-2' format as JSON 'auto';
 """
-).format()
+).format(config.get('S3', 'SONG_DATA'),
+        config.get('IAM_ROLE', 'ARN'))
 
 # FINAL TABLES
 
