@@ -1,9 +1,9 @@
 # Rodrigo Azevedo
-<sub>Assistente Pleno I no Grupo Trigo</sub>
+<sub>Data Engineer jr at Pareto</sub>
 
 
 **Contact:**
-* [E-mail](razevedo.contato@gmail.com)
+* [E-mail] - razevedo.contato@gmail.com
 * [LinkedIn](https://www.linkedin.com/in/azevedo94/)
 
 
