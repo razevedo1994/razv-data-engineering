@@ -2,6 +2,7 @@ import requests
 from requests import Session
 import pandas as pd
 import json
+from extracting_data_from_api.setup.settings import API_KEY
 
 
 def main():
