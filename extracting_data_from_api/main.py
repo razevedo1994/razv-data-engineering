@@ -1,4 +1,3 @@
-import requests
 from requests import Session
 import pandas as pd
 import json
