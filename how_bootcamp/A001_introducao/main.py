@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import collections
 from how_bootcamp.A001_introducao.constants import URL, MAPEAMENTO_NUM
 
 
@@ -153,3 +154,26 @@ freq_nr = [
 ]
 
 freq_nr.sort(key=lambda tup: tup[1])
+freq_nr[0]
+freq_nr[-1]
+
+counter = collections.Counter(comb)
+result = pd.DataFrame(counter.items(), columns=["Combinacao", "Frequencia"])
+result["p_freq"] = result["Frequencia"] / result["Frequencia"].sum() * 100
+result = result.sort_values(by="p_freq")
+
+
+print(
+    """
+O número mais frequente é o:
+{}
+O número menos frequente é o: {}
+A combinação de Pares, Ímpares e Primos mais frequente é: {} com
+frequencia de: {}%
+""".format(
+        freq_nr[-1][0],
+        freq_nr[0][0],
+        result["Combinacao"].values[-1],
+        int(result["p_freq"].values[-1] * 100) / 100,
+    )
+)
