@@ -154,3 +154,5 @@ freq_nr = [
     [24, v_24],
     [25, v_25],
 ]
+
+freq_nr.sort(key=lambda tup: tup[1])
