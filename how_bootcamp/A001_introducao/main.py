@@ -1,9 +1,9 @@
 import requests
 import pandas as pd
-from how_bootcamp.A001_introducao.constants import url
+from how_bootcamp.A001_introducao.constants import URL, MAPEAMENTO_NUM
 
 
-response = requests.get(url)
+response = requests.get(URL)
 
 response_text = response.text
 
@@ -12,9 +12,6 @@ df = pd.read_html(response_text)
 df = df[0].copy()
 
 nr_pop = list(range(1, 26))
-nr_pares = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
-nr_impares = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]
-nr_primos = [2, 3, 5, 7, 11, 13, 17, 19, 23]
 
 comb = []
 v_01 = 0
@@ -67,11 +64,11 @@ for index, row in df.iterrows():
     v_impares = 0
     v_primos = 0
     for campo in lst_campos:
-        if row[campo] in nr_pares:
+        if row[campo] in MAPEAMENTO_NUM["nr_pares"]:
             v_pares += 1
-        if row[campo] in nr_impares:
+        if row[campo] in MAPEAMENTO_NUM["nr_impares"]:
             v_impares += 1
-        if row[campo] in nr_primos:
+        if row[campo] in MAPEAMENTO_NUM["nr_primos"]:
             v_primos += 1
         if row[campo] == 1:
             v_01 += 1
