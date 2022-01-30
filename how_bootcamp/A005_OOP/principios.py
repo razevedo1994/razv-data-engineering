@@ -56,3 +56,40 @@ curriculo_rodrigo = Curriculo(pessoa=rodrigo, experiencias=["XPTO"])
 print(curriculo_rodrigo)
 curriculo_rodrigo.adiciona_experiencia("XYZ")
 print(curriculo_rodrigo)
+
+
+class Vivente:
+    def __init__(self, nome: str, data_de_nascimento: datetime.date) -> None:
+        self.nome = nome
+        self.data_de_nascimento = data_de_nascimento
+
+    @property
+    def idade(self) -> int:
+        return math.floor(
+            (datetime.date.today() - self.data_de_nascimento).days / 365.2425
+        )
+
+
+class PessoaHeranca(Vivente):
+    def __str__(self) -> str:
+        return f"{self.nome} tem {self.idade} anos"
+
+
+class Cachorro(Vivente):
+    def __init__(self, nome: str, data_de_nascimento: datetime.date, raca: str) -> None:
+        super().__init__(nome, data_de_nascimento)
+        self.raca = raca
+
+    def __str__(self) -> str:
+        return f"{self.nome} é da raca {self.raca} e tem {self.idade} anos"
+
+
+rodrigo2 = PessoaHeranca(nome="Rodrigo", data_de_nascimento=datetime.date(1994, 11, 9))
+
+print(rodrigo2)
+
+cachorro = Cachorro(
+    nome="Maya", data_de_nascimento=datetime.date(2019, 11, 9), raca="Pitbull"
+)
+
+print(cachorro)
