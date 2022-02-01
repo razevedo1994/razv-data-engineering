@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 import datetime
+from genericpath import exists
 import json
+import os
 from typing import List
 import requests
 import logging
@@ -59,10 +61,13 @@ class TradesApi(MercadoBitcoinApi):
 
 
 class DataWriter:
-    def __init__(self, filename: str) -> None:
-        self.filename = filename
+    def __init__(self, coin: str, api: str) -> None:
+        self.coin = coin
+        self.api = api
+        self.filename = f"{self.api}/{self.coin}/{datetime.datetime.now()}.json"
 
     def _write_row(self, row: str) -> None:
+        os.makedirs(os.path.dirname(self.filename), exist_ok=True)
         with open(self.filename, "a") as f:
             f.write(row)
 
@@ -74,3 +79,26 @@ class DataWriter:
                 self.write(element)
         else:
             raise DataTypeNotSupportedForIngestionException(data)
+
+
+class DataIngestor(ABC):
+    def __init__(
+        self, writer, coins: List[str], default_start_date: datetime.date
+    ) -> None:
+        self.coins = coins
+        self.default_start_date = default_start_date
+        self.writer = writer
+
+    @abstractmethod
+    def ingest(self) -> None:
+        pass
+
+
+class DaySummaryIngestor(DataIngestor):
+    def ingest(self) -> None:
+        date = self.default_start_date
+        if date < datetime.date.today():
+            for coin in self.coins:
+                api = DaySummaryApi(coin=coin)
+                data = api.get_data(date=date)
+                self.writer(coin=coin, api=api.type).write(data)
