@@ -88,6 +88,16 @@ class DataIngestor(ABC):
         self.coins = coins
         self.default_start_date = default_start_date
         self.writer = writer
+        self._checkpoint = None
+
+    def _get_checkpoint(self):
+        if not self._checkpoint:
+            return self.default_start_date
+        else:
+            return self._checkpoint
+
+    def _update_checkpoint(self, value):
+        self._checkpoint = value
 
     @abstractmethod
     def ingest(self) -> None:
