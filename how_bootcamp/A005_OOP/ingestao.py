@@ -7,6 +7,8 @@ from typing import List
 import requests
 import logging
 from schedule import repeat, every, run_pending
+from backoff import on_exception, expo
+import ratelimit
 from custom_exception import DataTypeNotSupportedForIngestionException
 
 
@@ -23,6 +25,9 @@ class MercadoBitcoinApi(ABC):
     def _get_endpoint(self, **kwargs) -> str:
         pass
 
+    @on_exception(expo, ratelimit.exception.RateLimitException, max_tries=10)
+    @ratelimit.limits(calls=29, period=30)
+    @on_exception(expo, requests.exceptions.HTTPError, max_tries=10)
     def get_data(self, **kwargs) -> dict:
         endpoint = self._get_endpoint(**kwargs)
         logger.info(f"Getting data from endpoint: {endpoint}")
