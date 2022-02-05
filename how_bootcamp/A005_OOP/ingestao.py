@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
 import datetime
-from genericpath import exists
 import json
 import os
+import time
 from typing import List
 import requests
 import logging
+from schedule import repeat, every, run_pending
 from custom_exception import DataTypeNotSupportedForIngestionException
 
 
@@ -88,7 +89,22 @@ class DataIngestor(ABC):
         self.coins = coins
         self.default_start_date = default_start_date
         self.writer = writer
-        self._checkpoint = None
+        self._checkpoint = self._load_checkpoint()
+
+    @property
+    def _checkpoint_filename(self) -> str:
+        return f"{self.__class__.__name__}.checkpoint"
+
+    def _write_checkpoint(self):
+        with open(self._checkpoint_filename, "w") as f:
+            f.write(f"{self._checkpoint}")
+
+    def _load_checkpoint(self) -> datetime:
+        try:
+            with open(self._checkpoint_filename, "r") as f:
+                return datetime.datetime.strptime(f.read(), "%Y-%m-%d").date()
+        except FileNotFoundError:
+            return None
 
     def _get_checkpoint(self):
         if not self._checkpoint:
@@ -98,6 +114,7 @@ class DataIngestor(ABC):
 
     def _update_checkpoint(self, value):
         self._checkpoint = value
+        self._write_checkpoint()
 
     @abstractmethod
     def ingest(self) -> None:
@@ -106,9 +123,27 @@ class DataIngestor(ABC):
 
 class DaySummaryIngestor(DataIngestor):
     def ingest(self) -> None:
-        date = self.default_start_date
+        date = self._get_checkpoint()
         if date < datetime.date.today():
             for coin in self.coins:
                 api = DaySummaryApi(coin=coin)
                 data = api.get_data(date=date)
                 self.writer(coin=coin, api=api.type).write(data)
+            self._update_checkpoint(date + datetime.timedelta(days=1))
+
+
+ingestor = DaySummaryIngestor(
+    writer=DataWriter,
+    coins=["BTC", "ETH", "LTC"],
+    default_start_date=datetime.date(2021, 6, 1),
+)
+
+
+@repeat(every(1).seconds)
+def job():
+    ingestor.ingest()
+
+
+while True:
+    run_pending()
+    time.sleep(0.5)
