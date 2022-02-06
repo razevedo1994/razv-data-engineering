@@ -26,7 +26,7 @@ class DataIngestor(ABC):
             with open(self._checkpoint_filename, "r") as f:
                 return datetime.datetime.strptime(f.read(), "%Y-%m-%d").date()
         except FileNotFoundError:
-            return None
+            return self.default_start_date
 
     def _get_checkpoint(self):
         if not self._checkpoint:
