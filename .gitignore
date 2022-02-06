@@ -4,3 +4,4 @@ setup/
 .vscode/settings.json
 __pycache__
 .idea/
+.pytest_cache
