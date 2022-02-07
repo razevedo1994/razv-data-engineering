@@ -2,7 +2,11 @@ import datetime
 import requests
 import pytest
 from unittest.mock import mock_open, patch
-from apis import DaySummaryApi, TradesApi, MercadoBitcoinApi
+from how_bootcamp.A005_OOP.mercado_bitcoin.apis import (
+    DaySummaryApi,
+    TradesApi,
+    MercadoBitcoinApi,
+)
 
 
 class TestDaySummaryApi:
@@ -90,7 +94,10 @@ class TestTradesApii:
 
 
 @pytest.fixture
-@patch("apis.MercadoBitcoinApi.__abstractmethods__", set())
+@patch(
+    "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi.__abstractmethods__",
+    set(),
+)
 def fixture_mercado_bitcoin_api():
     return MercadoBitcoinApi(coin="TEST")
 
@@ -117,7 +124,10 @@ def mocked_requests_get(*args, **kwargs):
 
 class TestMercadoBitcoinApi:
     @patch("requests.get", side_effect=mocked_requests_get)
-    @patch("apis.MercadoBitcoinApi._get_endpoint", return_value="valid_endpoint")
+    @patch(
+        "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
+        return_value="valid_endpoint",
+    )
     def test_get_date_requests_is_called(
         self, mock_get_endpoint, mock_requests, fixture_mercado_bitcoin_api
     ):
@@ -125,7 +135,10 @@ class TestMercadoBitcoinApi:
         mock_requests.assert_called_with("valid_endpoint")
 
     @patch("requests.get", side_effect=mocked_requests_get)
-    @patch("apis.MercadoBitcoinApi._get_endpoint", return_value="valid_endpoint")
+    @patch(
+        "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
+        return_value="valid_endpoint",
+    )
     def test_get_data_with_valid_endpoint(
         self, mock_get_endpoint, mock_requests, fixture_mercado_bitcoin_api
     ):
@@ -134,7 +147,10 @@ class TestMercadoBitcoinApi:
         assert actual == expected
 
     @patch("requests.get", side_effect=mocked_requests_get)
-    @patch("apis.MercadoBitcoinApi._get_endpoint", return_value="invalid_endpoint")
+    @patch(
+        "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
+        return_value="invalid_endpoint",
+    )
     def test_get_data_with_valid_endpoint(
         self, mock_get_endpoint, mock_requests, fixture_mercado_bitcoin_api
     ):
