@@ -1,4 +1,4 @@
-from how_bootcamp.A005_OOP.mercado_bitcoin.exceptions.custom_exception import (
+from mercado_bitcoin.exceptions.custom_exception import (
     DataTypeNotSupportedForIngestionException,
 )
 import json

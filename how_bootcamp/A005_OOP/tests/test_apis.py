@@ -2,7 +2,7 @@ import datetime
 import requests
 import pytest
 from unittest.mock import mock_open, patch
-from how_bootcamp.A005_OOP.mercado_bitcoin.apis import (
+from mercado_bitcoin.apis import (
     DaySummaryApi,
     TradesApi,
     MercadoBitcoinApi,
@@ -95,7 +95,7 @@ class TestTradesApii:
 
 @pytest.fixture
 @patch(
-    "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi.__abstractmethods__",
+    "mercado_bitcoin.apis.MercadoBitcoinApi.__abstractmethods__",
     set(),
 )
 def fixture_mercado_bitcoin_api():
@@ -125,7 +125,7 @@ def mocked_requests_get(*args, **kwargs):
 class TestMercadoBitcoinApi:
     @patch("requests.get", side_effect=mocked_requests_get)
     @patch(
-        "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
+        "mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
         return_value="valid_endpoint",
     )
     def test_get_date_requests_is_called(
@@ -136,7 +136,7 @@ class TestMercadoBitcoinApi:
 
     @patch("requests.get", side_effect=mocked_requests_get)
     @patch(
-        "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
+        "mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
         return_value="valid_endpoint",
     )
     def test_get_data_with_valid_endpoint(
@@ -148,7 +148,7 @@ class TestMercadoBitcoinApi:
 
     @patch("requests.get", side_effect=mocked_requests_get)
     @patch(
-        "how_bootcamp.A005_OOP.mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
+        "mercado_bitcoin.apis.MercadoBitcoinApi._get_endpoint",
         return_value="invalid_endpoint",
     )
     def test_get_data_with_valid_endpoint(

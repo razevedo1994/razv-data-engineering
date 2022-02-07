@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 import datetime
-from how_bootcamp.A005_OOP.mercado_bitcoin.apis import DaySummaryApi
+from mercado_bitcoin.apis import DaySummaryApi
 
 
 class DataIngestor(ABC):
