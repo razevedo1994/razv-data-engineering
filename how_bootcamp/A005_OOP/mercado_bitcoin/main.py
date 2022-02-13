@@ -2,11 +2,11 @@ import datetime
 import time
 from schedule import repeat, every, run_pending
 from ingestors import DaySummaryIngestor
-from writers import DataWriter
+from writers import S3Writer
 
 if __name__ == "__main__":
     day_summary_ingestor = DaySummaryIngestor(
-        writer=DataWriter,
+        writer=S3Writer,
         coins=["BTC", "ETH", "LTC"],
         default_start_date=datetime.date(2021, 6, 1),
     )
