@@ -1,4 +1,4 @@
-from mercado_bitcoin.exceptions.custom_exception import (
+from exceptions.custom_exception import (
     DataTypeNotSupportedForIngestionException,
 )
 import json
