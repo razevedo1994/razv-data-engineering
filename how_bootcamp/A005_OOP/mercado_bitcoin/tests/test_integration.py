@@ -1,6 +1,6 @@
 from datetime import datetime
 import datetime
-from mercado_bitcoin.apis import DaySummaryApi
+from apis import DaySummaryApi
 
 
 class TestDaySummaryApi:
