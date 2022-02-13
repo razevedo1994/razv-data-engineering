@@ -5,3 +5,4 @@ setup/
 __pycache__
 .idea/
 .pytest_cache
+jenkins_home
