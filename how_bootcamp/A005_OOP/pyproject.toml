@@ -11,6 +11,8 @@ ratelimit = "^2.2.1"
 backoff = "^1.11.1"
 boto3 = "^1.20.54"
 schedule = "^1.1.0"
+pynamodb = "^5.2.1"
+zappa = "^0.54.1"
 
 [tool.poetry.dev-dependencies]
 
