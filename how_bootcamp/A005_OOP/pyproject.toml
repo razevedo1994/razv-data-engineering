@@ -5,16 +5,18 @@ description = ""
 authors = ["razevedo1994 <razevedo.contato@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 requests = "^2.27.1"
 ratelimit = "^2.2.1"
 backoff = "^1.11.1"
 boto3 = "^1.20.54"
 schedule = "^1.1.0"
 pynamodb = "^5.2.1"
-zappa = "^0.54.1"
+
 
 [tool.poetry.dev-dependencies]
+zappa = "^0.54.1"
+pytest = "^7.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
