@@ -12,6 +12,6 @@ do cluster. O Hadoop realiza os calculos em disco, o que o torna mais lento em r
 # Codigo
 
 A biblioteca [mrjob](https://mrjob.readthedocs.io/en/latest/) permite que executemos MapReduce jobs com Python 
-localmente, sem a necessidade de um cluster ou de instalar o Hadoop.
+localmente, sem a necessidade de um cluster ou da instalação do Hadoop.
 
 No arquivo `wordcount.py` é possivel ver uma implementacao da tecnica MapReduce.
