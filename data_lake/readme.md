@@ -18,5 +18,6 @@ processamento de Big Data, analise em tempo real e aprendizado de maquina.
 
 
 
+### Formatos de arquivos
 
-
+[Parquet](https://databricks.com/glossary/what-is-parquet)
