@@ -26,4 +26,33 @@ man pwd
 - `cd "diretorio"`: Entra em um diretorio.
 - `cd ..`: Retorna ao diretorio anterior.
 - `mkdir`: Cria um diretorio.
+- `rmdir`: Apaga um diretorio. Obs: So apaga diretorios vazios.
+- `rm`: Apaga arquivo.
+```
+Exemplo: rm arquivo.txt
+```
+- `rm -r`: Apaga um diretorio recursivamente.
+- `cp`: Copia um arquivo:
+```
+cp mensagem.txt bemvindo.txt
+```
+- `mv`: Move ou renomeia um arquivo:
+```
+mv mensagem.txt bemvindo2.txt
+
+mv bemvindo2.txt diretorio2/
+```
+- `ls *`: Aplica o ls em todos aquivos/diretorios do diretorio atual.
+- `cp -r`: Copia o diretorio recursivamente.
+- `zip -r`: Zipa um diretorio.
+```
+zip -r work.zip diretorio/
+```
+- `unzip`: Descompacta aquivo zipado.
+```
+unzip work.zip
+```
+
+
+
 
