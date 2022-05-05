@@ -52,6 +52,14 @@ zip -r work.zip diretorio/
 ```
 unzip work.zip
 ```
+- `tar -cz`: Compacta e zipa o arquivo em formato tar.gz.
+```
+tar -cz diretorio > dir.tar.gz
+```
+- `tar -xzf`: Descompacta um arquivo tar.gz e ja redireciona a saida do arquivo.
+```
+tar -xzf dir.tar.gz
+```
 
 
 
