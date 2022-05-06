@@ -60,7 +60,21 @@ tar -cz diretorio > dir.tar.gz
 ```
 tar -xzf dir.tar.gz
 ```
+#
+### Programas, processos e pacotes
 
+- `ps -e`: Lista todos os processos em execucao no sistema. `ps -ef` gera um output mais detalhado.
+- `kill`: Finaliza um processo em execucao.
+```
+kill ${PID}
+```
+- `|`: Redireciona a saida para um outro programa.
+```
+# Filtra somente os processos que possuem "google" no nome
+ps -ef | grep google
+```
+- `top`: Exibe a utilizacao de recursos do computador.
+- `pstree`: Exibe os processos em execucao em arvore.
 
 
 
