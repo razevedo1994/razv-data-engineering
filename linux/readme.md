@@ -75,6 +75,30 @@ ps -ef | grep google
 ```
 - `top`: Exibe a utilizacao de recursos do computador.
 - `pstree`: Exibe os processos em execucao em arvore.
+- `chmod`: Concede ou remove permissoes a um arquivo/diretorio.
+```
+chmod +x: concede permissao de execucao
+chmod -r: remove permissao de leitura.
+```
+- `su`: Troca de usuario.
+```
+su rodrigo
+```
+- `adduser`: Adiciona um usuario.
+```
+adduser rodrigo2
+```
+- `apt`: Genrenciador de pacote.
+```
+# Atualiza os programas disponiveis para atualizacao.
 
+sudo apt-get update
 
+# Remove um programa
 
+sudo apt-get remove `programa`
+```
+- `ssh`: Permite conexao remota entre dos computadores.
+```
+ssh usuario@ip
+```
