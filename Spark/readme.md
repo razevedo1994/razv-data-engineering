@@ -52,6 +52,11 @@ In Spark SQL we can define our own functions with the udf method from the pyspar
 Window functions are a way of combining the values of ranges of rows in a DataFrame. When defining the window we can choose how to sort and group (with the `partitionBy` method) the rows and how wide of a window we'd like to use (described by `rangeBetween` or `rowsBetween`).
 
 For further information see the [Spark SQL, DataFrames and Datasets Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html) and the [Spark Python API Docs](https://spark.apache.org/docs/latest/api/python/index.html).
+#
+### Spark SQL
+
+[Spark SQL built-in functions](https://spark.apache.org/docs/latest/api/sql/index.html)
+[Spark SQL guide](https://spark.apache.org/docs/latest/sql-getting-started.html)
 
 
 
