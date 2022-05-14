@@ -1,4 +1,4 @@
-from airflow.hooks.base_hook import HttpHook
+from airflow.hooks.http_hook import HttpHook
 import requests
 import json
 
@@ -23,7 +23,7 @@ class TwitterHook(HttpHook):
         return url
 
     def connect_to_endpoint(self, url, session):
-        response = requests.Request("GET", url, headers=headers)
+        response = requests.Request("GET", url)
         prep = session.prepare_request(response)
         self.log.info(f"URL: {url}")
         return self.run_and_check(session, prep, {}).json()
@@ -46,10 +46,10 @@ class TwitterHook(HttpHook):
         url = self.create_url()
 
         yield from self.paginate(
-            url,
+            url, session
         )
 
 
-if __name__ == "__main__":
-    for pg in TwitterHook("AluraOnline").run():
-        print(json.dumps(pg, indent=4, sort_keys=True))
+# if __name__ == "__main__":
+#     for pg in TwitterHook("AluraOnline").run():
+#         print(json.dumps(pg, indent=4, sort_keys=True))
