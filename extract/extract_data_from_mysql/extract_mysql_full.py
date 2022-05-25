@@ -28,7 +28,7 @@ cursor.execute(query)
 results = cursor.fetchall()
 
 with open(local_filename, "w") as file_:
-    csv_w = csv.writer(file_, delimiter="|")
+    csv_w = csv.writer(file_, delimiter=",")
     csv_w.writerows(results)
     file_.close()
     cursor.close()
