@@ -1,0 +1,41 @@
+# Specify the compose format used
+# Depending on the version, some commands may be available or deprecated
+version: '3.5'
+# Specify the set of services (containers) the app is composed of
+services:
+  # Name of the service
+  # i.e: We gonna start a service named namenode
+  namenode:
+    # Indicate where the Dockerfile is in order to build the image 
+    build: ./docker/hadoop/hadoop-namenode
+    # Restart policy to apply when a container exits
+    # i.e: always restart
+    restart: always
+    # Specify a custom container name, rather than a default generated name
+    container_name: namenode
+    # Define the port to bind from the host to the container
+    # i.e: Namenode has a UI running on port 9870 inside the container
+    #      we bind that port to the port 32763 of the host.
+    #      We can access the UI by typing in our browser
+    #      locahost:32763
+    ports:
+      - "32763:9870"
+    # Bind the folder from the host /mnt/hadoop/namenode
+    # to the folder of inside the container /hadoop/dfs/name
+    # Basically, modifications made from the host to this folder are 
+    # also applied to the folder /hadoop/dfs/name in the container
+    # WITHOUT restarting the container 
+    volumes:
+      - ./mnt/hadoop/namenode:/hadoop/dfs/name
+    # Add environment variables that will be available inside
+    # the docker container
+    environment:
+      - CLUSTER_NAME=hadoop_cluster
+    # Run the command specify in test: to check if the container is "healthy"
+    # i.e: In this case, the container is considered as "healthy" once the port 9870
+    #      is accessible
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "namenode", "9870" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10

@@ -1,0 +1,115 @@
+[2020-12-08 09:26:01,446] {scheduler_job.py:155} INFO - Started process (PID=34) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:01,453] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:01,454] {logging_mixin.py:112} INFO - [2020-12-08 09:26:01,454] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:01,473] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:01,535] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.089 seconds
+[2020-12-08 09:26:02,387] {scheduler_job.py:155} INFO - Started process (PID=36) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:02,392] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:02,393] {logging_mixin.py:112} INFO - [2020-12-08 09:26:02,393] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:02,404] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:02,446] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.059 seconds
+[2020-12-08 09:26:03,398] {scheduler_job.py:155} INFO - Started process (PID=38) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:03,403] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:03,404] {logging_mixin.py:112} INFO - [2020-12-08 09:26:03,404] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:03,415] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:03,458] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.059 seconds
+[2020-12-08 09:26:04,411] {scheduler_job.py:155} INFO - Started process (PID=40) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:04,416] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:04,417] {logging_mixin.py:112} INFO - [2020-12-08 09:26:04,417] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:04,429] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:04,475] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.064 seconds
+[2020-12-08 09:26:05,427] {scheduler_job.py:155} INFO - Started process (PID=42) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:05,431] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:05,432] {logging_mixin.py:112} INFO - [2020-12-08 09:26:05,432] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:05,444] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:05,483] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.056 seconds
+[2020-12-08 09:26:06,434] {scheduler_job.py:155} INFO - Started process (PID=44) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:06,438] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:06,439] {logging_mixin.py:112} INFO - [2020-12-08 09:26:06,438] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:06,450] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:06,489] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.056 seconds
+[2020-12-08 09:26:07,443] {scheduler_job.py:155} INFO - Started process (PID=46) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:07,447] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:07,448] {logging_mixin.py:112} INFO - [2020-12-08 09:26:07,448] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:07,459] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:07,503] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.060 seconds
+[2020-12-08 09:26:08,458] {scheduler_job.py:155} INFO - Started process (PID=48) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:08,462] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:08,463] {logging_mixin.py:112} INFO - [2020-12-08 09:26:08,463] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:08,475] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:08,520] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.062 seconds
+[2020-12-08 09:26:09,474] {scheduler_job.py:155} INFO - Started process (PID=50) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:09,477] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:09,478] {logging_mixin.py:112} INFO - [2020-12-08 09:26:09,478] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:09,489] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:09,530] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.056 seconds
+[2020-12-08 09:26:10,484] {scheduler_job.py:155} INFO - Started process (PID=52) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:10,488] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:10,490] {logging_mixin.py:112} INFO - [2020-12-08 09:26:10,489] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:10,500] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:10,545] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.061 seconds
+[2020-12-08 09:26:11,507] {scheduler_job.py:155} INFO - Started process (PID=54) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:11,511] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:11,512] {logging_mixin.py:112} INFO - [2020-12-08 09:26:11,512] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:11,527] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:11,571] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.064 seconds
+[2020-12-08 09:26:12,522] {scheduler_job.py:155} INFO - Started process (PID=56) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:12,526] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:12,527] {logging_mixin.py:112} INFO - [2020-12-08 09:26:12,526] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:12,538] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:12,576] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.055 seconds
+[2020-12-08 09:26:13,537] {scheduler_job.py:155} INFO - Started process (PID=58) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:13,541] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:13,542] {logging_mixin.py:112} INFO - [2020-12-08 09:26:13,542] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:13,553] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:13,597] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.061 seconds
+[2020-12-08 09:26:14,553] {scheduler_job.py:155} INFO - Started process (PID=60) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:14,557] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:14,558] {logging_mixin.py:112} INFO - [2020-12-08 09:26:14,558] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:14,570] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:14,610] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.057 seconds
+[2020-12-08 09:26:15,564] {scheduler_job.py:155} INFO - Started process (PID=62) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:15,568] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:15,569] {logging_mixin.py:112} INFO - [2020-12-08 09:26:15,569] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:15,580] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:15,622] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.058 seconds
+[2020-12-08 09:26:16,576] {scheduler_job.py:155} INFO - Started process (PID=64) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:16,580] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:16,581] {logging_mixin.py:112} INFO - [2020-12-08 09:26:16,581] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:16,592] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:16,634] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.058 seconds
+[2020-12-08 09:26:17,586] {scheduler_job.py:155} INFO - Started process (PID=66) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:17,590] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:17,591] {logging_mixin.py:112} INFO - [2020-12-08 09:26:17,590] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:17,601] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:17,643] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.057 seconds
+[2020-12-08 09:26:18,597] {scheduler_job.py:155} INFO - Started process (PID=68) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:18,601] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:18,602] {logging_mixin.py:112} INFO - [2020-12-08 09:26:18,602] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:18,613] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:18,656] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.060 seconds
+[2020-12-08 09:26:19,607] {scheduler_job.py:155} INFO - Started process (PID=70) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:19,611] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:19,612] {logging_mixin.py:112} INFO - [2020-12-08 09:26:19,612] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:19,623] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:19,664] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.057 seconds
+[2020-12-08 09:26:20,620] {scheduler_job.py:155} INFO - Started process (PID=72) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:20,624] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:20,625] {logging_mixin.py:112} INFO - [2020-12-08 09:26:20,625] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:20,636] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:20,676] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.057 seconds
+[2020-12-08 09:26:21,638] {scheduler_job.py:155} INFO - Started process (PID=74) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:21,641] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:21,643] {logging_mixin.py:112} INFO - [2020-12-08 09:26:21,642] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:21,655] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:21,702] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.064 seconds
+[2020-12-08 09:26:22,626] {scheduler_job.py:155} INFO - Started process (PID=76) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:22,630] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:22,632] {logging_mixin.py:112} INFO - [2020-12-08 09:26:22,631] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:22,643] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:22,685] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.059 seconds
+[2020-12-08 09:26:23,641] {scheduler_job.py:155} INFO - Started process (PID=78) to work on /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:23,646] {scheduler_job.py:1589} INFO - Processing file /usr/local/airflow/dags/data_dag.py for tasks to queue
+[2020-12-08 09:26:23,647] {logging_mixin.py:112} INFO - [2020-12-08 09:26:23,647] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:23,660] {scheduler_job.py:1601} INFO - DAG(s) dict_keys(['data_dag']) retrieved from /usr/local/airflow/dags/data_dag.py
+[2020-12-08 09:26:23,713] {scheduler_job.py:163} INFO - Processing /usr/local/airflow/dags/data_dag.py took 0.072 seconds
