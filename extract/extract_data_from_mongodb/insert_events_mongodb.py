@@ -1,4 +1,3 @@
-from pymongo import MongoClient
 from mongodb_model import MongoInstance
 import datetime
 import configparser
