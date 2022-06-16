@@ -1,10 +1,9 @@
 from datetime import timedelta
-from botocore.exceptions import ClientError
 from mongodb_model import MongoInstance
+from writer import write_file_local, write_file_on_s3
 import configparser
 import datetime
-import boto3
-import csv
+
 
 # load the mongo_config values
 parser = configparser.ConfigParser()
@@ -29,24 +28,6 @@ all_events = mongo.get_events(start_date, end_date)
 
 export_file_events = "export_file_events.csv"
 
-with open(export_file_events, "w") as file:
-    writer = csv.writer(file, delimiter=",")
-    writer.writerows(all_events)
+write_file_local(all_events, export_file_events)
 
-
-s3 = boto3.client("s3", aws_access_key_id=access_key, aws_secret_access_key=secret_key)
-s3_file = export_file_events
-
-
-def upload_file(filename, bucket_name, s3_file):
-    try:
-        s3.upload_file(filename, bucket_name, s3_file)
-    except ClientError as e:
-        print(str(e))
-        return False
-    return True
-
-
-upload_file(
-    filename=export_file_events, bucket_name=bucket_name, s3_file=export_file_events
-)
+write_file_on_s3(access_key, secret_key, export_file_events, bucket_name)
