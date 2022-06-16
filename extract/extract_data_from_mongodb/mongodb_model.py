@@ -33,3 +33,6 @@ class MongoInstance:
             all_events.append(current_event)
 
         return all_events
+
+    def insert_event(self, event):
+        self.mongo_collection.insert_one(event)

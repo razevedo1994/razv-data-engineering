@@ -1,6 +1,6 @@
 from pymongo import MongoClient
+from mongodb_model import MongoInstance
 import datetime
-import urllib
 import configparser
 
 # load the mongo_config values
@@ -12,25 +12,7 @@ password = parser.get("mongo_config", "password")
 db_name = parser.get("mongo_config", "database")
 collection_name = parser.get("mongo_config", "collection")
 
-mongo_uri = (
-    "mongodb+srv://"
-    + username
-    + ":"
-    + password
-    + "@"
-    + hostname
-    + "/"
-    + db_name
-    + "?retryWrites=true&w=majority"
-)
-
-mongo_client = MongoClient(mongo_uri)
-
-# connect to the db where the collection resides
-mongo_db = mongo_client[db_name]
-
-# choose the connection to query documents from
-mongo_collection = mongo_db[collection_name]
+mongo = MongoInstance(username, password, hostname, db_name, collection_name)
 
 event_1 = {
     "event_id": 1,
@@ -57,7 +39,7 @@ event_4 = {
 }
 
 # insert events
-mongo_collection.insert_one(event_1)
-mongo_collection.insert_one(event_2)
-mongo_collection.insert_one(event_3)
-mongo_collection.insert_one(event_4)
+events = [event_1, event_2, event_3, event_4]
+
+for event in events:
+    mongo.insert_event(event)
