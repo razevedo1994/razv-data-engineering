@@ -1,9 +1,11 @@
 from botocore.exceptions import ClientError
+import os
 import csv
 import boto3
 
 
 def write_file_local(events, filename):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     export_file_events = filename
 
     with open(export_file_events, "w") as file:

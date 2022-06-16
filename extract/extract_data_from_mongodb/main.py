@@ -26,7 +26,7 @@ end_date = start_date + timedelta(days=1)
 
 all_events = mongo.get_events(start_date, end_date)
 
-export_file_events = "export_file_events.csv"
+export_file_events = f"events/extracted_at={datetime.datetime.now().date()}.csv"
 
 write_file_local(all_events, export_file_events)
 
