@@ -1,3 +1,10 @@
+# What is Apache Spark?
+
+Apache Spark is a unified engine designed for large-scale distributed data processing, on premises in data centers or in the cloud.
+
+Spark provides in-memory storage for intermediate computations, making it much faster than Hadoop MapReduce.
+
+
 # Spark Application Concepts
 
 - `Application`: A user program built on Spark using APIs. It consists of a driver program and executors on the cluster.
