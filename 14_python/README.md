@@ -1,0 +1,2 @@
+- [O tutorial de Python](https://docs.python.org/pt-br/3.10/tutorial/)
+- [ListaDeExercicios](https://wiki.python.org.br/ListaDeExercicios)
