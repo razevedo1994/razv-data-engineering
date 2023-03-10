@@ -54,16 +54,16 @@ resource "aws_dynamodb_table" "terraform_locks" {
 }
 
 # Define the backend to use
-terraform {
-  backend "s3" {
-    bucket          = "razv-terraform-up-and-running-state"
-    key             = "global/s3/terraform.tfstate"
-    region          = "us-east-2"
+# terraform {
+#   backend "s3" {
+#     bucket          = "razv-terraform-up-and-running-state"
+#     key             = "global/s3/terraform.tfstate"
+#     region          = "us-east-2"
 
-    dynamodb_table  = "terraform-up-and-running-locks"
-    encrypt         = true
-  }
-}
+#     dynamodb_table  = "terraform-up-and-running-locks"
+#     encrypt         = true
+#   }
+# }
 
 output "s3_bucket_arn" {
   value       = aws_s3_bucket.terraform_state.arn
