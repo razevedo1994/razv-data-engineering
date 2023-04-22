@@ -7,4 +7,3 @@ pytest-order        # ordenacao de testes
 httpx               # requests async para testes
 black               # auto formatacao
 flake8              # linter
-boto3               # Amazon Web Services (AWS) Software Development Kit (SDK)
