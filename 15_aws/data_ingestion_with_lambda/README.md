@@ -85,3 +85,8 @@ touch test.sh
 mkdir tests
 touch tests/{__init__,conftest,test_api}.py
 ```
+
+## Data Model da API
+
+![database](./myfinance-api/docs/data_model.png)
+
