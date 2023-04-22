@@ -33,7 +33,7 @@ setup(
     packages=find_packages(exclude=["tests"]),
     include_package_data=True,
     install_requires=read_requirements("requirements.txt"),
-    entrypoint={
+    entry_points={
         "console_scripts": ["myfinance = myfinance.cli:main"]
     }
 )
