@@ -49,7 +49,6 @@ pytest-order    # ordenação de testes
 httpx           # requests async para testes
 black           # auto formatação
 flake8          # linter
-boto3           # Amazon Web Services (AWS) Software Development Kit (SDK)
 ```
 
 Instalamos as dependencias iniciais.
