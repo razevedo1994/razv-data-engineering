@@ -18,7 +18,7 @@ services:
     tty: true
   db:
     build: postgres
-    image: myfinance_postgres-13-alpine-multi-user
+    image: myfinance_postgres-13-alpine
     volumes:
       - $HOME/.postgres/myfinance_db/data/postgresql:/var/lib/postgresql/data
     ports:
