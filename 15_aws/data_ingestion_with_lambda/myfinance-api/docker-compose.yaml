@@ -22,8 +22,8 @@ services:
     volumes:
       - $HOME/.postgres/myfinance_db/data/postgresql:/var/lib/postgresql/data
     ports:
-      - "5435:5432"
+      - "5432:5432"
     environment:
-      - MYFINANCE_DBS=myfinance, myfinance_test
+      - POSTGRES_DBS=myfinance, myfinance_test
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
