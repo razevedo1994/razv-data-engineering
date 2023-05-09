@@ -47,3 +47,15 @@ def user_list():
             table.add_row(user.username, user.email)
 
     Console().print(table)
+
+
+@main.command()
+def create_user(email: str, username: str, password: str):
+    """Create user"""
+    with Session(engine) as session:
+        user = User(email=email, username=username, password=password)
+        session.add(user)
+        session.commit()
+        session.refresh(user)
+        typer.echo(f"created {username} user")
+        return user
