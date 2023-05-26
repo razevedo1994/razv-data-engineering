@@ -43,6 +43,115 @@ This means your code is on stage 19 of its physical execution plan. Data is proc
 ![DAG](./images/image3.png)
 
 ## [Spark Cluster Overview](https://spark.apache.org/docs/3.0.2/cluster-overview.html)
+#
+
+# Resilient Distributed Datasets (RDDs)
+
+### Resilent Distributed Datasets
+
+Spark processes data using a cluster of distributed computing resources. Source data is loaded from a database, CSV files, JSON files, or text files. Spark converts this data into an immutable collection of objects for distributed processing called a Resilent Distributed Dataset or RDD. The features of the RDD are designed for efficient data processing; it is fault-tolerant (recomputed in case of failure), cacheable, and partitioned.
+
+RDDs are a low-level abstraction of the data. In the first version of Spark, you had to work directly with RDDs. You can think of RDDs as long lists distributed across various machines. You can still use RDDs as part of your Spark code although working with DataFrames and SQL is easier. This course won't go into the details of RDD syntax, but you can find more resources below on them.
+
+## [Explanation of the difference between RDDs and DataFrames in Databricks](https://www.databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html)
+
+## [Spark documentation's RDD programming guide](https://spark.apache.org/docs/latest/rdd-programming-guide.html)
+
+#
+
+
+# PySpark and SparkSession
+
+### PySpark and SparkSession
+
+Python is one of many languages you can use to write Spark Jobs. If you choose to use Python, then you will use the PySpark library. PySpark gives you access to all the important Spark data constructs like:
+
+- RDDs
+- DataFrames
+- Spark SQL
+
+That means you can write Spark code that runs in either a Spark Cluster, in a Jupyter Notebook, or on your laptop. When you write code on your Jupyter Notebook or a laptop, Spark creates a temporary Spark node that runs locally. Because Spark uses Java, it is necessary to install the JDK on a computer used to run PySpark code.
+
+### The SparkSession
+
+- The first component of each Spark Program is the `SparkContext`. The `SparkContext` is the main entry point for Spark functionality and connects the cluster with the application.
+
+- To create a `SparkContext`, we first need a `SparkConf` object to specify some information about the application such as its name and the master's nodes' IP address. If we run Spark in `local` mode, we can just put the string local as master.
+
+- To read data frames, we need to use Spark SQL equivalent, the `SparkSession`.
+
+- Similarity to the `SparkConf`, we can specify some parameters to create a SparkSession.
+    - `getOrCreate()` for example, means that if you already have a SparkSession running, instead of creating a new one, the old one will be returned and its parameters will be modified to the new configurations.
+
+
+# Maps and Lambda Functions
+
+### Maps and Lambda Functions in Spark
+
+One of the most common functions in Spark is `map`. It simply makes a copy of the original input data and transforms that copy according to whatever function you pass to `map`. You can think of it as directions for the data telling each input how to get to the output.
+
+### Convert a List of Strings to Lowercase
+
+Let's walk through an example where the data is a list of thousands of strings of song titles:
+
+```
+"Despacito",
+"Nice for what",
+"No tears left to cry",
+"Despacito",
+"Havana",
+"In my feelings",
+"Nice for what",
+"despacito",
+"All the stars"
+...
+```
+and we want to transform the strings to lowercase:
+
+```
+"despacito",
+"nice for what",
+"no tears left to cry",
+...
+```
+After some initialization, we'll convert the log of songs (just a normal Python list) to a distributed dataset that Spark can use. This uses a special `spark.sparkContext` object. The Spark Context has a method `parallelize` that takes a Python object and distributes the object across the machines in your cluster so Spark can process the dataset.
+
+```
+distributed_song_log_rdd = spark.sparkContext.parallelize(log_of_songs)
+
+```
+Once this small dataset is accessible to Spark, we want to do something with it. One example is simply converting the song title to a lowercase, a common pre-processing step to standardize your data.
+
+```
+def convert_song_to_lowercase(song):
+  return song.lower()
+```
+Next, we can use the Spark function `map` to apply our convert_song_to_lowercase function to each song in our dataset.
+
+```
+distributed_song_log_rdd.map(convert_song_to_lowercase)
+```
+
+All of these steps will appear to run instantly but remember, the spark commands are using lazy evaluation, they haven't really converted the songs to lowercase yet. Spark will procrastinate in transforming the songs to lowercase since you might have several other processing steps like removing punctuation, Spark wants to wait until the last minute to see if it can streamline its work, and combine these into a single stage.
+
+If we want to force Spark to take some action on the data, we can use the `collect` function, which gathers the results from all of the machines in our cluster.
+
+```
+distributed_song_log.map(convert_song_to_lowercase).collect()
+```
+
+You can also use anonymous functions in Python. Anonymous functions are a Python feature for writing functional style programs. Use the special keyword `lambda`, and then write the input of the function followed by a colon and the expected output.
+
+```
+distributed_song_log_rdd.map(lambda song: song.lower())
+```
+
+You'll see anonymous functions all over the place in Spark. They're completely optional, you could just define functions if you prefer. But lambdas are a best practice.
+
+
+
+
+
 
 
 
