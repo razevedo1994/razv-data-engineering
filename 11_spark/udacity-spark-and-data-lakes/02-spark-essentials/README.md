@@ -148,6 +148,119 @@ distributed_song_log_rdd.map(lambda song: song.lower())
 
 You'll see anonymous functions all over the place in Spark. They're completely optional, you could just define functions if you prefer. But lambdas are a best practice.
 
+# Data Formats
+
+### Data Formats
+
+The most common data formats you might come across are CSV, JSON, HTML, and XML.
+
+A CSV file, or comma-separated values file, stores tabular data in index format. Each line represents a record where fields are always in the same order defined usually by the first header. As the name suggests, the records are separated with a comma:
+
+```
+Name       , Address .   , City       , State, Zip
+Andrea Cruz, 123 Main St., Idaho Falls, ID   , 83404
+Lamh Huynh , 456 Elm St. , Santa Cruz , CA   , 95063  
+```
+
+JSON or JavaScript object notation storage records in attribute-value pairs. The values may contain simple often numeric types or arrays:
+
+```
+{
+"Name":"Andrea Cruz",
+"Address":"123 Main St.",
+"City":"Idaho Falls",
+"State":"ID",
+"Zip":"83404"
+},
+{
+"Name":"Lamh Huynh",
+"Address":"456 Elm St.",
+"City":"Santa Cruz",
+"State":"CA",
+"Zip":"95063"
+}
+```
+
+HTML or hypertext markup language is a standard language for creating web pages and applications. If you scrape data from the Internet, you will need to parse HTML:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<div style="height: 90px">
+<head>
+    <meta charset="UTF-8">
+    <title>STEDI Login Page</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href= "favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div class="page-header">
+    <p><img src="stedi-logo-4000px-x-4000px.png" width="200" height="200" style="background-color:black;"/></p>
+</div>
+<div style="text-align:center">
+
+    <form name="loginForm" id="login" method="post" >
+        <p>
+            <labelfor="username">Email Address</label><br>
+            <input type="text" id="username" name="username" size="25">
+        </p>
+    </form>
+</div>
+</body>
+</div>
+</html>
+```
+
+# Distributed Data Stores
+
+### Distributed Data Stores
+
+When we have so much data that we need distributed computing, the data itself often needs to be stored in a distributed way.
+
+Distributed file systems, storage services, and distributed databases store data in a fault-tolerant way. So if a machine breaks or becomes unavailable, we don't lose the information we have collected.
+
+Hadoop has a Distributed File System, HDFS, to store data. HDFS splits files into 64 or 128 megabyte blocks and replicates these blocks across the cluster. This way, the data is stored in a fault-tolerant way and can be accessed in digestible chunks.
+
+In the classroom workspaces and if you installed Spark on your local machine, Spark simulates a distributed file store. If you are working on a project or in a company that runs its own cluster resources, they might use HDFS.
+
+If you're working on the cloud, you can use a distributed data storage service on a cloud provider. Examples of distributed data services on cloud providers include:
+
+- [Amazon Simple Storage Service, or S3](https://aws.amazon.com/pt/s3/)
+- [Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs/#overview)
+- [Google Cloud Storage](https://cloud.google.com/storage?hl=pt-br)
+
+# Imperative vs Declarative programming
+
+### Imperative VS Declarative Programming
+
+**Imperative programming using DataFrames and Python**
+
+- Imperative programming is concerned with the How
+  - 
+  ```
+  Let's get in the car, drive two miles down the road to my favorite bakery, go into the shop, select the cake from the counter, purchase the cake, and then drive home.
+  ```
+
+- Focus on the exact steps, how we get to the result
+- Data transformations with DataFrames
+
+**Declarative programming using SQL**
+
+- Cares about the What
+- Let's get the cake for Julia.
+- concerned about the result we want to achieve
+- abstraction layer of an imperative system
+
+If you have used pandas DataFrames before, you are probably familiar with how to manipulate DataFrames programmatically. We can chain methods such as filter and group by one after another, transforming the DataFrame further and further. In the next few videos, we will dive into how to do data transformations with DataFrames and imperative programming.
+
+
+![IMPERATIVEXDECLARATIVE](./images/image4.png)
+
+### [DataFrame API](https://spark.apache.org/docs/latest/sql-programming-guide.html)
+
+
+
+
 
 
 
