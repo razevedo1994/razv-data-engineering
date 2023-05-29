@@ -256,9 +256,13 @@ If you have used pandas DataFrames before, you are probably familiar with how to
 
 ![IMPERATIVEXDECLARATIVE](./images/image4.png)
 
-### [DataFrame API](https://spark.apache.org/docs/latest/sql-programming-guide.html)
+#### [Spark SQL, DataFrames and Datasets Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 
-### [Generic Load/Save Functions](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
+#### [Generic Load/Save Functions](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html)
+
+#### [DataFrame API](https://spark.apache.org/docs/3.1.1/api/python/reference/pyspark.sql.html#dataframe-apis)
+
+
 
 
 
