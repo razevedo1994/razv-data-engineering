@@ -1,0 +1,39 @@
+• What is Data Engineering? How does it differentiate from Data Science?
+• Can you define ETL? Which are some ETL tools you have used?
+• What is a data pipeline? Can you explain its key components?
+• Describe data ingestion and its role in data engineering?
+• What do you understand by data normalization? Why is it important?
+• Could you explain the concept of data partitioning in data engineering?
+• What challenges might you face when dealing with Big Data?
+• How would you maintain the quality of data in your pipeline?
+• Can you discuss some database optimization techniques?
+• What are the differences between OLAP and OLTP?
+• How would you handle real-time data streaming?
+• What are data lakes and data warehouses? How are they different?
+• Could you discuss some commonly used data formats? When would you prefer one over another?
+• What is Apache Kafka? How is it used in data engineering?
+• Explain the role of a Data Catalog in a data engineering framework.
+• How would you ensure data privacy and security in your data pipelines?
+• How would you handle missing or corrupted data in a dataset?
+• What is Apache Spark? How is it used in data engineering?
+• How would you handle the processing of a large dataset that cannot fit into the memory of a single machine?
+• Can you explain what Lambda & Kappa Architecture is and its components?
+• What are the different types of NoSQL databases? When would you use each one?
+• Can you explain data serialization and its importance in data engineering?
+• How do you ensure data consistency in a distributed system?
+• What is the difference between a data lake, a data warehouse, and a data mart?
+• What is the role of an ORM in data engineering?
+• How do you monitor the performance of a data pipeline?
+• What is event-driven processing and why is it important in data engineering?
+• What is eventual consistency in a distributed database system?
+• Explain the differences between batch processing and stream processing.
+• How would you ensure data durability in your data pipeline?
+• What is schema-on-read versus schema-on-write?
+• What is data wrangling or data munging?
+• Can you explain the concept of data lineage?
+• How would you design a system to process data in parallel?
+• Explain the concept of Data Virtualization.
+• Can you explain the purpose of a data dictionary?
+• How would you handle data redundancy issues in your data pipeline?
+• Describe the MapReduce programming model.
+• How would you approach designing a new data pipeline from scratch?
