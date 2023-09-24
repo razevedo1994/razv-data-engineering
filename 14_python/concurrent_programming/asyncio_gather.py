@@ -26,7 +26,7 @@ async def main() -> None:
     time_before = perf_counter()
     for _ in range(20):
         get_random_pokemon_name_sync()
-    print(f"Total time (asynchronous): {perf_counter() - time_before}")
+    print(f"Total time (synchronous): {perf_counter() - time_before}")
 
     # asynchronous call
     time_before = perf_counter()
