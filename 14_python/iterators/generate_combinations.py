@@ -13,10 +13,10 @@ def calculate_average(numbers: Collection[int]) -> float:
 def main() -> None:
     data = [1, 2, 3, 4, 5]
 
-    perms = list(itertools.combinations(data, 2))
+    com = list(itertools.combinations(data, 2))
 
     # TODO
-    averages: list[int] = [calculate_average(x) for x in perms]
+    averages: list[int] = [calculate_average(x) for x in com]
 
     print("Averages of combinations:")
     for average in averages:
